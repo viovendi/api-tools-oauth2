@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b6ae0b834f83b80ea93399d2fd3b046",
+    "content-hash": "d4f34af6c74141b0ee0f423a67eb3bd5",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -368,42 +368,62 @@
         },
         {
             "name": "laminas/laminas-crypt",
-            "version": "3.12.0",
+            "version": "4.1.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laminas/laminas-crypt.git",
-                "reference": "ceab630494fc7a0d82ec39ad63947ef889a21be7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-crypt/zipball/ceab630494fc7a0d82ec39ad63947ef889a21be7",
-                "reference": "ceab630494fc7a0d82ec39ad63947ef889a21be7",
-                "shasum": ""
+                "url": "https://github.com/viovendi/laminas-crypt",
+                "reference": "106f9915534521a9a22a3d1194ddda047e5aaec4"
             },
             "require": {
                 "ext-mbstring": "*",
                 "laminas/laminas-math": "^3.4",
                 "laminas/laminas-stdlib": "^3.8",
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
-                "psr/container": "^1.1"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/container": "^1.1 || ^2.0"
             },
             "conflict": {
                 "zendframework/zend-crypt": "*"
             },
             "require-dev": {
-                "laminas/laminas-coding-standard": "~2.4.0",
-                "phpunit/phpunit": "^9.5.25"
+                "laminas/laminas-coding-standard": "~2.5.0",
+                "phpunit/phpunit": "^10.1"
             },
             "suggest": {
                 "ext-openssl": "Required for most features of Laminas\\Crypt"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Laminas\\Crypt\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "files": [
+                    "test/_autoload.php"
+                ],
+                "psr-4": {
+                    "LaminasTest\\Crypt\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -414,21 +434,15 @@
                 "laminas"
             ],
             "support": {
-                "chat": "https://laminas.dev/chat",
                 "docs": "https://docs.laminas.dev/laminas-crypt/",
-                "forum": "https://discourse.laminas.dev",
                 "issues": "https://github.com/laminas/laminas-crypt/issues",
+                "source": "https://github.com/laminas/laminas-crypt",
                 "rss": "https://github.com/laminas/laminas-crypt/releases.atom",
-                "source": "https://github.com/laminas/laminas-crypt"
+                "chat": "https://laminas.dev/chat",
+                "forum": "https://discourse.laminas.dev"
             },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
             "abandoned": true,
-            "time": "2024-07-15T09:11:42+00:00"
+            "time": "2025-06-12T14:50:02+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -6892,7 +6906,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "laminas-api-tools/api-tools-api-problem": 20,
-        "laminas-api-tools/api-tools-content-negotiation": 20
+        "laminas-api-tools/api-tools-content-negotiation": 20,
+        "laminas/laminas-crypt": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
