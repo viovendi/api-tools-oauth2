@@ -84,10 +84,6 @@
     "replace": {
         "zfcampus/zf-oauth2": "^1.5.0"
     },
-        "provide": {
-        "laminas-api-tools/api-tools-api-problem": "1.7.x-dev",
-        "laminas-api-tools/api-tools-content-negotiation": "1.9.x-dev"
-    },
     "repositories": [
         {
           "type": "git",
