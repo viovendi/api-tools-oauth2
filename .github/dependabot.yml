@@ -14,6 +14,5 @@ updates:
     # This enables vulnerability scanning without creating update PRs
     open-pull-requests-limit: 0
     
-    # Only scan for security vulnerabilities in current versions
-    # No updates will be proposed, only alerts will be generated
-    allow: []
+    # Dependabot will scan for all vulnerabilities but won't create PRs
+    # Security alerts will still be generated in the Security tab
