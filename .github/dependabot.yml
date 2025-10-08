@@ -55,5 +55,4 @@ updates:
         patterns:
           - "laminas/*"
         update-types:
-          - "security-update"
           - "patch"
