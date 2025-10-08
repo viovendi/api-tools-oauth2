@@ -1,41 +1,19 @@
 version: 2
 updates:
-  # PHP Composer dependencies
+  # PHP Composer dependencies - SCAN ONLY MODE
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
-      # Check weekly on Mondays at 9 AM Berlin time
+      # Check weekly on Tuesdays at 4 PM Berlin time
       interval: "weekly"
       day: "tuesday"
       time: "16:00"
       timezone: "Europe/Berlin"
     
-    # Limit open PRs to avoid spam
-    open-pull-requests-limit: 5
+    # IMPORTANT: Set to 0 to prevent any automatic PRs
+    # This enables vulnerability scanning without creating update PRs
+    open-pull-requests-limit: 0
     
-    # Commit message formatting
-    commit-message:
-      prefix: "security"
-      prefix-development: "chore"
-      include: "scope"
-    
-    # Auto-assign reviewer
-    reviewers:
-      - "ivan-babuka"
-    
-    # Labels for easy filtering
-    labels:
-      - "dependencies"
-      - "security-update"
-      - "automated-pr"
-    
-    # Version update strategy
-    versioning-strategy: "increase-if-necessary"
-    
-    # Group related updates
-    groups:
-      laminas:
-        patterns:
-          - "laminas/*"
-        update-types:
-          - "patch"
+    # Only scan for security vulnerabilities in current versions
+    # No updates will be proposed, only alerts will be generated
+    allow: []
