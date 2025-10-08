@@ -6,17 +6,12 @@ updates:
     schedule:
       # Check weekly on Mondays at 9 AM Berlin time
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      day: "tuesday"
+      time: "16:00"
       timezone: "Europe/Berlin"
     
     # Limit open PRs to avoid spam
     open-pull-requests-limit: 5
-    
-    # Only allow security updates (comment out to allow all updates)
-    allow:
-      - dependency-type: "all"
-        update-type: "security"
     
     # Commit message formatting
     commit-message:
