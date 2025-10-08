@@ -1,16 +1,3 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
-version: 2
-updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
-
-
 version: 2
 updates:
   # PHP Composer dependencies
@@ -19,16 +6,17 @@ updates:
     schedule:
       # Check weekly on Mondays at 9 AM Berlin time
       interval: "weekly"
-      day: "tuesday"
-      time: "18:00"
+      day: "monday"
+      time: "09:00"
       timezone: "Europe/Berlin"
     
     # Limit open PRs to avoid spam
     open-pull-requests-limit: 5
     
-    # Security updates only (since it's a library fork)
-    # Remove this line to get all updates
-    enable-security-updates: true
+    # Only allow security updates (comment out to allow all updates)
+    allow:
+      - dependency-type: "all"
+        update-type: "security"
     
     # Commit message formatting
     commit-message:
